@@ -28,7 +28,12 @@ namespace Foodtruck.Grafico
 
         private void ManterLanches_Shown(object sender, EventArgs e)
         {
-
+            if (LancheSelecionado != null)
+            {
+                this.tbId.Text = LancheSelecionado.Id.ToString();
+                this.tbNome.Text = LancheSelecionado.Nome;
+                this.tbValor.Text = LancheSelecionado.Valor.ToString();
+            }
         }
 
         private void btSalvar_Click(object sender, EventArgs e)

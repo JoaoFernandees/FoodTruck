@@ -90,7 +90,12 @@ namespace Foodtruck.Grafico
             this.Close();
         }
 
-        private void ManterBebida_Shown(object sender, EventArgs e)
+        private void ManterBebidas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManterBebidas_Shown(object sender, EventArgs e)
         {
             if (BebidaSelecionada != null)
             {
@@ -99,11 +104,6 @@ namespace Foodtruck.Grafico
                 this.tbValor.Text = BebidaSelecionada.Valor.ToString();
                 this.tbTamanho.Text = BebidaSelecionada.Tamanho.ToString();
             }
-        }
-
-        private void ManterBebida_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
