@@ -28,184 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btAlterar = new System.Windows.Forms.Button();
             this.dgPedidos = new System.Windows.Forms.DataGridView();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgBebidas = new System.Windows.Forms.DataGridView();
-            this.NomeBebida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorBebida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TamanhoBebida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgLanches = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PTotal = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DadosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Encerrado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btFinalizar = new System.Windows.Forms.Button();
+            this.btAlterar = new System.Windows.Forms.Button();
+            this.btAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btAlterar
-            // 
-            this.btAlterar.Location = new System.Drawing.Point(12, 12);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(118, 35);
-            this.btAlterar.TabIndex = 3;
-            this.btAlterar.Text = "Alterar Pedido";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // dgPedidos
             // 
             this.dgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Código,
-            this.Cliente,
-            this.Total,
-            this.Data});
+            this.Id,
+            this.DadosCliente,
+            this.DataCompra,
+            this.ValorTotal,
+            this.Encerrado});
             this.dgPedidos.Location = new System.Drawing.Point(12, 53);
             this.dgPedidos.Name = "dgPedidos";
-            this.dgPedidos.Size = new System.Drawing.Size(466, 436);
+            this.dgPedidos.Size = new System.Drawing.Size(820, 298);
             this.dgPedidos.TabIndex = 4;
+            this.dgPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPedidos_CellContentClick);
             // 
-            // Código
+            // Id
             // 
-            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Código.DataPropertyName = "Id";
-            this.Código.FillWeight = 81.21828F;
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 81.21828F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
-            // Cliente
+            // DadosCliente
             // 
-            this.Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cliente.DataPropertyName = "NomeCliente";
-            this.Cliente.FillWeight = 106.2606F;
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
+            this.DadosCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DadosCliente.DataPropertyName = "DadosCliente";
+            this.DadosCliente.FillWeight = 106.2606F;
+            this.DadosCliente.HeaderText = "Cliente";
+            this.DadosCliente.Name = "DadosCliente";
+            this.DadosCliente.ReadOnly = true;
             // 
-            // Total
+            // DataCompra
             // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Total.DataPropertyName = "ValorTotal";
-            this.Total.FillWeight = 106.2606F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.DataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataCompra.DataPropertyName = "DataCompra";
+            this.DataCompra.FillWeight = 106.2606F;
+            this.DataCompra.HeaderText = "Data";
+            this.DataCompra.Name = "DataCompra";
+            this.DataCompra.ReadOnly = true;
             // 
-            // Data
+            // ValorTotal
             // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Data.DataPropertyName = "DataCompra";
-            this.Data.FillWeight = 106.2606F;
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
+            this.ValorTotal.DataPropertyName = "ValorTotal";
+            this.ValorTotal.HeaderText = "Valor";
+            this.ValorTotal.Name = "ValorTotal";
             // 
-            // dgBebidas
+            // Encerrado
             // 
-            this.dgBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeBebida,
-            this.ValorBebida,
-            this.TamanhoBebida});
-            this.dgBebidas.Location = new System.Drawing.Point(484, 53);
-            this.dgBebidas.Name = "dgBebidas";
-            this.dgBebidas.Size = new System.Drawing.Size(348, 221);
-            this.dgBebidas.TabIndex = 5;
+            this.Encerrado.DataPropertyName = "Encerrado";
+            this.Encerrado.HeaderText = "Encerrado";
+            this.Encerrado.Name = "Encerrado";
             // 
-            // NomeBebida
+            // btFinalizar
             // 
-            this.NomeBebida.DataPropertyName = "Nome";
-            this.NomeBebida.HeaderText = "Nome";
-            this.NomeBebida.Name = "NomeBebida";
+            this.btFinalizar.Location = new System.Drawing.Point(586, 11);
+            this.btFinalizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btFinalizar.Name = "btFinalizar";
+            this.btFinalizar.Size = new System.Drawing.Size(246, 37);
+            this.btFinalizar.TabIndex = 11;
+            this.btFinalizar.Text = "Encerrar";
+            this.btFinalizar.UseVisualStyleBackColor = true;
+            this.btFinalizar.Click += new System.EventHandler(this.btFinalizar_Click);
             // 
-            // ValorBebida
+            // btAlterar
             // 
-            this.ValorBebida.DataPropertyName = "Valor";
-            this.ValorBebida.HeaderText = "Preço";
-            this.ValorBebida.Name = "ValorBebida";
+            this.btAlterar.Location = new System.Drawing.Point(313, 11);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(246, 37);
+            this.btAlterar.TabIndex = 10;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
-            // TamanhoBebida
+            // btAdicionar
             // 
-            this.TamanhoBebida.DataPropertyName = "Tamanho";
-            this.TamanhoBebida.HeaderText = "Tamanho";
-            this.TamanhoBebida.Name = "TamanhoBebida";
-            this.TamanhoBebida.ReadOnly = true;
-            // 
-            // dgLanches
-            // 
-            this.dgLanches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLanches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Preço});
-            this.dgLanches.Location = new System.Drawing.Point(484, 280);
-            this.dgLanches.Name = "dgLanches";
-            this.dgLanches.Size = new System.Drawing.Size(348, 209);
-            this.dgLanches.TabIndex = 6;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Preço
-            // 
-            this.Preço.DataPropertyName = "Valor";
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            this.Preço.ReadOnly = true;
-            // 
-            // PTotal
-            // 
-            this.PTotal.AutoSize = true;
-            this.PTotal.Location = new System.Drawing.Point(12, 492);
-            this.PTotal.Name = "PTotal";
-            this.PTotal.Size = new System.Drawing.Size(51, 13);
-            this.PTotal.TabIndex = 7;
-            this.PTotal.Text = "Total: R$";
+            this.btAdicionar.Location = new System.Drawing.Point(12, 11);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2);
+            this.btAdicionar.Name = "btAdicionar";
+            this.btAdicionar.Size = new System.Drawing.Size(254, 37);
+            this.btAdicionar.TabIndex = 9;
+            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.UseVisualStyleBackColor = true;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // TelaListaPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 534);
-            this.Controls.Add(this.PTotal);
-            this.Controls.Add(this.dgLanches);
-            this.Controls.Add(this.dgBebidas);
-            this.Controls.Add(this.dgPedidos);
+            this.ClientSize = new System.Drawing.Size(844, 364);
+            this.Controls.Add(this.btFinalizar);
             this.Controls.Add(this.btAlterar);
+            this.Controls.Add(this.btAdicionar);
+            this.Controls.Add(this.dgPedidos);
             this.Name = "TelaListaPedidos";
             this.Text = "TelaListaPedidos";
+            this.Load += new System.EventHandler(this.TelaListaPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.DataGridView dgPedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridView dgBebidas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeBebida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorBebida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TamanhoBebida;
-        private System.Windows.Forms.DataGridView dgLanches;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
-        private System.Windows.Forms.Label PTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DadosCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorTotal;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Encerrado;
+        private System.Windows.Forms.Button btFinalizar;
+        private System.Windows.Forms.Button btAlterar;
+        private System.Windows.Forms.Button btAdicionar;
     }
 }

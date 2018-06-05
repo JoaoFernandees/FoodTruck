@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace Foodtruck.Negocio.Models
 {
-
-
     [Table(name: "Pedidos")]
     public class Pedido
     {
@@ -17,31 +15,36 @@ namespace Foodtruck.Negocio.Models
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<Lanche> Lanches { get; set; }
         public virtual ICollection<Bebida> Bebidas { get; set; }
+        public bool Encerrado { get; set; }
 
         public Pedido()
         {
             this.DataCompra = DateTime.MinValue;
+            this.Encerrado = false;
             this.Lanches = new List<Lanche>();
             this.Bebidas = new List<Bebida>();
         }
 
-        public String ValorTotal
+        public String DadosCliente
         {
             get
             {
-                Decimal totalLanches = this.Lanches.Sum(m => m.Valor);
-                Decimal totalBebidas = this.Bebidas.Sum(m => m.Valor);
-                return Convert.ToString(totalLanches + totalBebidas);
+                String dadosCliente;
+                dadosCliente = this.Cliente.CPF + " - " + this.Cliente.Nome;
+                return dadosCliente;
             }
         }
 
-        public String NomeCliente
+        public Decimal ValorTotal
         {
             get
             {
-                return Cliente.Descrever();
+                Decimal totalLanches = 0, totalBebidas = 0;
+                totalLanches = this.Lanches.Sum(s => s.Valor);
+                totalBebidas = this.Bebidas.Sum(s => s.Valor);
+                Decimal valorTotal = totalLanches + totalBebidas;
+                return valorTotal;
             }
         }
-        
     }
 }

@@ -59,7 +59,7 @@
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(186, 21);
             this.cbClientes.TabIndex = 5;
-            //this.cbClientes.SelectedIndexChanged += new System.EventHandler(this.cbClientes_SelectedIndexChanged);
+            this.cbClientes.SelectedIndexChanged += new System.EventHandler(this.cbClientes_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -89,7 +89,6 @@
             this.cbBebidas.Name = "cbBebidas";
             this.cbBebidas.Size = new System.Drawing.Size(186, 21);
             this.cbBebidas.TabIndex = 8;
-            //this.cbBebidas.SelectedIndexChanged += new System.EventHandler(this.cbBebidas_SelectedIndexChanged);
             // 
             // btAdicionaBebida
             // 
@@ -125,6 +124,7 @@
             this.dgBebidas.RowTemplate.Height = 33;
             this.dgBebidas.Size = new System.Drawing.Size(358, 207);
             this.dgBebidas.TabIndex = 16;
+            this.dgBebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBebidas_CellContentClick);
             // 
             // Nome
             // 
@@ -156,7 +156,6 @@
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "Valor total:";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cbLanches
             // 
@@ -255,6 +254,7 @@
             this.Controls.Add(this.cbClientes);
             this.Name = "ManterPedido";
             this.Text = "ManterPedido";
+            this.Load += new System.EventHandler(this.AdicionaPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).EndInit();
             this.ResumeLayout(false);

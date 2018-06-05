@@ -85,6 +85,7 @@
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(211, 20);
             this.tbId.TabIndex = 0;
+            this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // btSalvar
             // 
@@ -121,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ManterLanches";
             this.Text = "ManterLanches";
+            this.Shown += new System.EventHandler(this.ManterLanches_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -22,36 +22,22 @@ namespace Foodtruck.Grafico
             InitializeComponent();
         }
 
-        private void ManterPedido_Load(object sender, EventArgs e)
+        private void AdicionaPedido_Load(object sender, EventArgs e)
         {
             CarregaComboBoxes();
-            CarregaDatagrids();
+            CarregaDataGrids();
             CarregaTotal();
-        }
-
-        private void ManterPedidos_Shown(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CarregaTotal()
-        {
-            if (PedidoSelecionado != null)
-            {
-                label4.Text = PedidoSelecionado.ValorTotal.ToString();
-            }
-            else
-            {
-                label4.Text = pedido.ValorTotal.ToString();
-            }
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void CarregaComboBoxes()
         {
-            cbClientes.DisplayMember = "Descricao";
-            cbClientes.ValueMember = "Id";
-            cbClientes.DataSource = Program.Gerenciador.TodosOsClientes();
+            if (PedidoSelecionado == null)
+            {
+                cbClientes.DisplayMember = "Descricao";
+                cbClientes.ValueMember = "Id";
+                cbClientes.DataSource = Program.Gerenciador.TodosOsClientes();
+            }
 
             cbLanches.DisplayMember = "Nome";
             cbLanches.ValueMember = "Id";
@@ -62,173 +48,135 @@ namespace Foodtruck.Grafico
             cbBebidas.DataSource = Program.Gerenciador.TodasAsBebidas();
         }
 
-        private void CarregaDatagrids()
+        private void CarregaTotal()
         {
-            if (PedidoSelecionado != null)
-            {
-                dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgBebidas.MultiSelect = false;
-                dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgBebidas.AutoGenerateColumns = false;
-                dgBebidas.DataSource = PedidoSelecionado.Bebidas.ToList();
-
-                dgLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgLanches.MultiSelect = false;
-                dgLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgLanches.AutoGenerateColumns = false;
-                dgLanches.DataSource = PedidoSelecionado.Lanches.ToList();
-                CarregaTotal();
-            }
-            else
-            {
-                dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgBebidas.MultiSelect = false;
-                dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgBebidas.AutoGenerateColumns = false;
-                dgBebidas.DataSource = pedido.Bebidas.ToList();
-
-                dgLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgLanches.MultiSelect = false;
-                dgLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dgLanches.AutoGenerateColumns = false;
-                dgLanches.DataSource = pedido.Lanches.ToList();
-
-                CarregaTotal();
-            }
+            label4.Text = pedido.ValorTotal.ToString();
         }
 
         private void btAdicionaBebida_Click(object sender, EventArgs e)
         {
-            if (PedidoSelecionado == null)
-            {
-                Bebida bebidaSelecionada = (Bebida)cbBebidas.SelectedItem;
-                pedido.Bebidas.Add(bebidaSelecionada);
-                CarregaDatagrids();
-            }
-            else
-            {
-                Bebida bebidaSelecionada = (Bebida)cbBebidas.SelectedItem;
-                PedidoSelecionado.Bebidas.Add(bebidaSelecionada);
-                CarregaDatagrids();
-            }
-        }
-
-        private void btAdicionaLanche_Click(object sender, EventArgs e)
-        {
-            if (PedidoSelecionado == null)
-            {
-                Lanche lancheSelecionado = cbLanches.SelectedItem as Lanche;
-                pedido.Lanches.Add(lancheSelecionado);
-                CarregaDatagrids();
-            }
-
-            else
-            {
-                Lanche lancheSelecionado = cbLanches.SelectedItem as Lanche;
-                PedidoSelecionado.Lanches.Add(lancheSelecionado);
-                CarregaDatagrids();
-            }
-        }
-
-        private void btSalvar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Validacao validacao;
-
-                pedido.Cliente = cbClientes.SelectedItem as Cliente;
-                pedido.DataCompra = DateTime.Now;
-
-                if (PedidoSelecionado == null)
-                {
-                    validacao = Program.Gerenciador.CadastraPedido(pedido);
-                }
-                else
-                {
-                    PedidoSelecionado.Cliente = cbClientes.SelectedItem as Cliente;
-                    validacao = Program.Gerenciador.AlterarPedido(PedidoSelecionado);
-                }
-
-                if (validacao.Valido)
-                {
-                    MessageBox.Show("Pedido salvo com sucesso!");
-                }
-                else
-                {
-                    String msg = "";
-                    foreach (var mensagem in validacao.Mensagens)
-                    {
-                        msg += mensagem + Environment.NewLine;
-                    }
-                    MessageBox.Show(msg, "Erro");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
-            }
-            this.Close();
-        }
-
-        private bool VerificarSelecaoBebida()
-        {
-            if (dgBebidas.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("Selecione uma linha");
-                return false;
-            }
-            return true;
-        }
-
-        private bool VerificarSelecaoLanche()
-        {
-            if (dgLanches.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("Selecione uma linha");
-                return false;
-            }
-            return true;
+            Bebida bebidaSelecionada = (Bebida)cbBebidas.SelectedItem;
+            pedido.Bebidas.Add(bebidaSelecionada);
+            CarregaDataGrids();
         }
 
         private void btRetiraBebida_Click(object sender, EventArgs e)
         {
-            if (PedidoSelecionado == null)
-            {
-                if (VerificarSelecaoBebida())
-                {
-                    Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                    pedido.Bebidas.Remove(bebidaSelecionada);
-                    CarregaDatagrids();
-                }
-            }
-            else
-            {
-                Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                PedidoSelecionado.Bebidas.Remove(bebidaSelecionada);
-                CarregaDatagrids();
-            }
+            Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+            pedido.Bebidas.Remove(bebidaSelecionada);
+            CarregaDataGrids();
+        }
+
+        private void btAdicionaLanche_Click(object sender, EventArgs e)
+        {
+            Lanche lancheSelecionado = (Lanche)cbLanches.SelectedItem;
+            pedido.Lanches.Add(lancheSelecionado);
+            CarregaDataGrids();
         }
 
         private void btRetiraLanche_Click(object sender, EventArgs e)
         {
+            Lanche lancheSelecionado = (Lanche)dgLanches.SelectedRows[0].DataBoundItem;
+            pedido.Lanches.Remove(lancheSelecionado);
+            CarregaDataGrids();
+        }
+
+        private void CarregaDataGrids()
+        {
+            dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgBebidas.AutoGenerateColumns = false;
+            dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgBebidas.MultiSelect = false;
+            dgBebidas.DataSource = pedido.Bebidas.ToList();
+
+            dgLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgLanches.AutoGenerateColumns = false;
+            dgLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgLanches.MultiSelect = false;
+            dgLanches.DataSource = pedido.Lanches.ToList();
+
+            CarregaTotal();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            /*try
+            {*/
             if (PedidoSelecionado == null)
             {
-                if (VerificarSelecaoLanche())
-                {
-                    Lanche lancheSelecionado = (Lanche)dgLanches.SelectedRows[0].DataBoundItem;
-                    pedido.Lanches.Remove(lancheSelecionado);
-                    CarregaDatagrids();
-                }
+                pedido.Cliente = cbClientes.SelectedItem as Cliente;
+                pedido.DataCompra = DateTime.Now;
+            }
+
+            Validacao validacao;
+            if (PedidoSelecionado == null)
+            {
+                validacao = Program.Gerenciador.CadastraPedido(pedido);
             }
             else
             {
-                Lanche lancheSelecionado = (Lanche)dgLanches.SelectedRows[0].DataBoundItem;
-                PedidoSelecionado.Lanches.Remove(lancheSelecionado);
-                CarregaDatagrids();
+                validacao = Program.Gerenciador.AlterarPedido(pedido, true);
+            }
+
+            if (!validacao.Valido)
+            {
+                String mensagemValidacao = "";
+                foreach (var msg in validacao.Mensagens)
+                {
+                    mensagemValidacao += msg + Environment.NewLine;
+                }
+                MessageBox.Show(mensagemValidacao, "Erro");
+            }
+            else
+            {
+                MessageBox.Show("Pedido cadastrado com sucesso");
+            }
+            this.Close();
+            /*}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
+            }*/
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AdicionaPedido_Shown(object sender, EventArgs e)
+        {
+            if (PedidoSelecionado != null)
+            {
+                this.pedido.Id = PedidoSelecionado.Id;
+                this.pedido.Cliente = PedidoSelecionado.Cliente;
+                this.pedido.DataCompra = PedidoSelecionado.DataCompra;
+                this.cbClientes.Text = PedidoSelecionado.Cliente.Descricao;
+
+                foreach (Bebida beb in PedidoSelecionado.Bebidas)
+                {
+                    pedido.Bebidas.Add(beb);
+                }
+
+                foreach (Lanche lan in PedidoSelecionado.Lanches)
+                {
+                    pedido.Lanches.Add(lan);
+                }
+                CarregaDataGrids();
             }
         }
 
         private void dgLanches_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
