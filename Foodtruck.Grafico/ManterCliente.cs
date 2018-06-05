@@ -94,6 +94,8 @@ namespace Foodtruck.Grafico
         {
 
         }
+        //validação cpf
+
 
         private void tbcpf_numero(object sender, KeyPressEventArgs e)
         {

@@ -98,6 +98,7 @@ namespace Foodtruck.Grafico
         {
 
         }
+        //validação numero
 
         private void tbValor_numero(object sender, KeyPressEventArgs e)
         {

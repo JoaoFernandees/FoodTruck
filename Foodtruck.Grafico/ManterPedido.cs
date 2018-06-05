@@ -133,11 +133,6 @@ namespace Foodtruck.Grafico
                 MessageBox.Show("Pedido cadastrado com sucesso");
             }
             this.Close();
-            /*}
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
-            }*/
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
