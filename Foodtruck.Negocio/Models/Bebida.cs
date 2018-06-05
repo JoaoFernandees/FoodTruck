@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Foodtruck.Negocio.Models
 {
+    [Table(name: "Bebidas")]
     public class Bebida : Produto
     {
         public Double Tamanho { get; set; }

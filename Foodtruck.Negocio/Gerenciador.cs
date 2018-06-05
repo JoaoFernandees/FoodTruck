@@ -29,6 +29,14 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
+        public Validacao RemoverLanche(Lanche lanche)
+        {
+            Validacao validacao = new Validacao();
+            banco.Lanches.Remove(lanche);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarCliente(Cliente clienteAlterado)
         {
             Validacao validacao = new Validacao();
@@ -219,19 +227,24 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
-        /*Lanche*/
-
-        public Validacao RemoverLanche(Lanche lanche)
+        public Pedido BuscaPedidoPorId(long id)
         {
-            Validacao validacao = new Validacao();
-            banco.Lanches.Remove(lanche);
-            banco.SaveChanges();
-            return validacao;
+            return this.banco.Pedidos.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public Cliente BuscaClientePorId(long id)
         {
             return this.banco.Clientes.Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public Lanche BuscaLanchePorId(long id)
+        {
+            return this.banco.Lanches.Where(l => l.Id == id).FirstOrDefault();
+        }
+
+        public Bebida BuscaBebidaPorId(long id)
+        {
+            return this.banco.Bebidas.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public List<Cliente> TodosOsClientes()
@@ -252,21 +265,6 @@ namespace Foodtruck.Negocio
         public List<Pedido> TodosOsPedidos()
         {
             return this.banco.Pedidos.ToList();
-        }
-
-        public Pedido BuscaPedidoPorId(long id)
-        {
-            return this.banco.Pedidos.Where(c => c.Id == id).FirstOrDefault();
-        }
-
-        public Lanche BuscaLanchePorId(long id)
-        {
-            return this.banco.Lanches.Where(l => l.Id == id).FirstOrDefault();
-        }
-
-        public Bebida BuscaBebidaPorId(long id)
-        {
-            return this.banco.Bebidas.Where(c => c.Id == id).FirstOrDefault();
         }
     }
 }
