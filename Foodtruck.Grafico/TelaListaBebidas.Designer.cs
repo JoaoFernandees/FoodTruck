@@ -47,6 +47,7 @@
             this.btAdicionar.TabIndex = 1;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click_1);
             // 
             // btAlterar
             // 
@@ -56,6 +57,7 @@
             this.btAlterar.TabIndex = 2;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click_1);
             // 
             // btRemover
             // 
