@@ -117,7 +117,7 @@ namespace Foodtruck.Grafico
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Decimal && e.KeyChar != (char)Keys.Oemcomma && e.KeyChar != (char)Keys.OemPeriod)
             {
                 e.Handled = true;
-                MessageBox.Show("este campo aceita somente numero e virgula");
+                MessageBox.Show("este campo aceita somente numero");
             }
         }
 

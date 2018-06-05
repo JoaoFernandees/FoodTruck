@@ -91,7 +91,7 @@
             this.tbCpf.Location = new System.Drawing.Point(74, 102);
             this.tbCpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbCpf.Name = "tbCpf";
-            this.tbCpf.Size = new System.Drawing.Size(150, 20);
+            this.tbCpf.Size = new System.Drawing.Size(523, 20);
             this.tbCpf.TabIndex = 6;
             this.tbCpf.TextChanged += new System.EventHandler(this.tbCpf_TextChanged);
             this.tbCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbcpf_numero);
