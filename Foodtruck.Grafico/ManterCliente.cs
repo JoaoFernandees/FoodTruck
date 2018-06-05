@@ -84,5 +84,26 @@ namespace Foodtruck.Grafico
                 this.tbEmail.Text = ClienteSelecionado.Email;
             }
         }
+
+        private void ManterCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCpf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbcpf_numero(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Decimal && e.KeyChar != (char)Keys.Oemcomma)
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero");
+            }
+        }
+
+
     }
 }

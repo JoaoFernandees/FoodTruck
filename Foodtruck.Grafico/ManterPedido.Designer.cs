@@ -92,22 +92,22 @@
             // 
             // btAdicionaBebida
             // 
-            this.btAdicionaBebida.Location = new System.Drawing.Point(253, 47);
+            this.btAdicionaBebida.Location = new System.Drawing.Point(280, 28);
             this.btAdicionaBebida.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionaBebida.Name = "btAdicionaBebida";
-            this.btAdicionaBebida.Size = new System.Drawing.Size(49, 22);
+            this.btAdicionaBebida.Size = new System.Drawing.Size(66, 22);
             this.btAdicionaBebida.TabIndex = 9;
-            this.btAdicionaBebida.Text = "+";
+            this.btAdicionaBebida.Text = "Adicionar";
             this.btAdicionaBebida.UseVisualStyleBackColor = true;
             this.btAdicionaBebida.Click += new System.EventHandler(this.btAdicionaBebida_Click);
             // 
             // btRetiraBebida
             // 
-            this.btRetiraBebida.Location = new System.Drawing.Point(306, 47);
+            this.btRetiraBebida.Location = new System.Drawing.Point(280, 55);
             this.btRetiraBebida.Name = "btRetiraBebida";
-            this.btRetiraBebida.Size = new System.Drawing.Size(40, 22);
+            this.btRetiraBebida.Size = new System.Drawing.Size(66, 22);
             this.btRetiraBebida.TabIndex = 15;
-            this.btRetiraBebida.Text = "-";
+            this.btRetiraBebida.Text = "Remover";
             this.btRetiraBebida.UseVisualStyleBackColor = true;
             this.btRetiraBebida.Click += new System.EventHandler(this.btRetiraBebida_Click);
             // 
@@ -153,9 +153,9 @@
             this.label4.Location = new System.Drawing.Point(11, 305);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Valor total:";
+            this.label4.Text = "Total do Pedido:";
             // 
             // cbLanches
             // 
@@ -203,22 +203,22 @@
             // 
             // btAdicionaLanche
             // 
-            this.btAdicionaLanche.Location = new System.Drawing.Point(628, 45);
+            this.btAdicionaLanche.Location = new System.Drawing.Point(647, 23);
             this.btAdicionaLanche.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionaLanche.Name = "btAdicionaLanche";
-            this.btAdicionaLanche.Size = new System.Drawing.Size(42, 23);
+            this.btAdicionaLanche.Size = new System.Drawing.Size(59, 23);
             this.btAdicionaLanche.TabIndex = 21;
-            this.btAdicionaLanche.Text = "+";
+            this.btAdicionaLanche.Text = "Adicionar";
             this.btAdicionaLanche.UseVisualStyleBackColor = true;
             this.btAdicionaLanche.Click += new System.EventHandler(this.btAdicionaLanche_Click);
             // 
             // btRetiraLanche
             // 
-            this.btRetiraLanche.Location = new System.Drawing.Point(675, 45);
+            this.btRetiraLanche.Location = new System.Drawing.Point(647, 54);
             this.btRetiraLanche.Name = "btRetiraLanche";
-            this.btRetiraLanche.Size = new System.Drawing.Size(31, 23);
+            this.btRetiraLanche.Size = new System.Drawing.Size(59, 23);
             this.btRetiraLanche.TabIndex = 22;
-            this.btRetiraLanche.Text = "-";
+            this.btRetiraLanche.Text = "Remover";
             this.btRetiraLanche.UseVisualStyleBackColor = true;
             this.btRetiraLanche.Click += new System.EventHandler(this.btRetiraLanche_Click);
             // 

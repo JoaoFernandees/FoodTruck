@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbValor = new System.Windows.Forms.TextBox();
@@ -38,19 +37,10 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Código";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 46);
+            this.label2.Location = new System.Drawing.Point(12, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -59,7 +49,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 82);
+            this.label3.Location = new System.Drawing.Point(12, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
@@ -67,24 +57,27 @@
             // 
             // tbValor
             // 
-            this.tbValor.Location = new System.Drawing.Point(61, 75);
+            this.tbValor.Location = new System.Drawing.Point(61, 57);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(211, 20);
             this.tbValor.TabIndex = 2;
+            this.tbValor.TextChanged += new System.EventHandler(this.tbValor_TextChanged);
+            this.tbValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValor_numero);
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(61, 39);
+            this.tbNome.Location = new System.Drawing.Point(61, 21);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(211, 20);
             this.tbNome.TabIndex = 1;
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(61, 6);
+            this.tbId.Location = new System.Drawing.Point(274, 3);
             this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(211, 20);
+            this.tbId.Size = new System.Drawing.Size(10, 20);
             this.tbId.TabIndex = 0;
+            this.tbId.Visible = false;
             this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // btSalvar
@@ -119,7 +112,6 @@
             this.Controls.Add(this.tbValor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "ManterLanches";
             this.Text = "ManterLanches";
             this.Shown += new System.EventHandler(this.ManterLanches_Shown);
@@ -129,8 +121,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbValor;

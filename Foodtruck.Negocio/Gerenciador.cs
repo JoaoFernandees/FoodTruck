@@ -107,10 +107,7 @@ namespace Foodtruck.Negocio
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (clienteAdicionado.Id < 0)
-            {
-                validacao.Mensagens.Add("Id", "O indenfiticador deve constituir apenas números positivos");
-            }
+
             //verifica se já tem alguma mensagem de erro e se tiver pula essa verificação
             if (this.banco.Clientes.Where(c => c.Id == clienteAdicionado.Id).Any() && validacao.Mensagens.Count == 0)
             {

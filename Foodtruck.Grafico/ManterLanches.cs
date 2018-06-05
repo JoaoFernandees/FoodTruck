@@ -93,5 +93,19 @@ namespace Foodtruck.Grafico
         {
 
         }
+
+        private void tbValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbValor_numero(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Decimal && e.KeyChar != (char)Keys.Oemcomma && e.KeyChar != (char)Keys.OemPeriod)
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente numero e virgula");
+            }
+        }
     }
 }

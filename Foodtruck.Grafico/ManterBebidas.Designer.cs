@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,19 +39,10 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Código: ";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Location = new System.Drawing.Point(12, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 5;
@@ -61,7 +51,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 73);
+            this.label3.Location = new System.Drawing.Point(12, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 7;
@@ -70,7 +60,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 106);
+            this.label4.Location = new System.Drawing.Point(12, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 9;
@@ -78,31 +68,36 @@
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(75, 8);
+            this.tbId.Location = new System.Drawing.Point(385, 8);
             this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(304, 20);
+            this.tbId.Size = new System.Drawing.Size(10, 20);
             this.tbId.TabIndex = 10;
+            this.tbId.Visible = false;
             // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(75, 37);
+            this.tbNome.Location = new System.Drawing.Point(75, 21);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(304, 20);
             this.tbNome.TabIndex = 11;
             // 
             // tbValor
             // 
-            this.tbValor.Location = new System.Drawing.Point(75, 70);
+            this.tbValor.Location = new System.Drawing.Point(75, 54);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(304, 20);
             this.tbValor.TabIndex = 12;
+            this.tbValor.TextChanged += new System.EventHandler(this.tbValor_TextChanged);
+            this.tbValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValor_numero);
             // 
             // tbTamanho
             // 
-            this.tbTamanho.Location = new System.Drawing.Point(75, 99);
+            this.tbTamanho.Location = new System.Drawing.Point(75, 83);
             this.tbTamanho.Name = "tbTamanho";
             this.tbTamanho.Size = new System.Drawing.Size(304, 20);
             this.tbTamanho.TabIndex = 13;
+            this.tbTamanho.TextChanged += new System.EventHandler(this.tbTamanho_TextChanged);
+            this.tbTamanho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbValor_numero);
             // 
             // btSalvar
             // 
@@ -138,7 +133,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "ManterBebidas";
             this.Text = "ManterBebidas";
             this.Load += new System.EventHandler(this.ManterBebidas_Load);
@@ -149,8 +143,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
