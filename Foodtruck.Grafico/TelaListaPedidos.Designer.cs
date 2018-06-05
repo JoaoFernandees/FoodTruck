@@ -41,7 +41,7 @@
             this.dgLanches = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssss = new System.Windows.Forms.Label();
+            this.PTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).BeginInit();
@@ -55,6 +55,7 @@
             this.btAlterar.TabIndex = 3;
             this.btAlterar.Text = "Alterar Pedido";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // dgPedidos
             // 
@@ -161,21 +162,21 @@
             this.Preço.Name = "Preço";
             this.Preço.ReadOnly = true;
             // 
-            // ssss
+            // PTotal
             // 
-            this.ssss.AutoSize = true;
-            this.ssss.Location = new System.Drawing.Point(12, 492);
-            this.ssss.Name = "ssss";
-            this.ssss.Size = new System.Drawing.Size(51, 13);
-            this.ssss.TabIndex = 7;
-            this.ssss.Text = "Total: R$";
+            this.PTotal.AutoSize = true;
+            this.PTotal.Location = new System.Drawing.Point(12, 492);
+            this.PTotal.Name = "PTotal";
+            this.PTotal.Size = new System.Drawing.Size(51, 13);
+            this.PTotal.TabIndex = 7;
+            this.PTotal.Text = "Total: R$";
             // 
             // TelaListaPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 534);
-            this.Controls.Add(this.ssss);
+            this.Controls.Add(this.PTotal);
             this.Controls.Add(this.dgLanches);
             this.Controls.Add(this.dgBebidas);
             this.Controls.Add(this.dgPedidos);
@@ -205,6 +206,6 @@
         private System.Windows.Forms.DataGridView dgLanches;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
-        private System.Windows.Forms.Label ssss;
+        private System.Windows.Forms.Label PTotal;
     }
 }

@@ -48,6 +48,7 @@
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Código: ";
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -82,6 +83,7 @@
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(304, 20);
             this.tbId.TabIndex = 10;
+            //this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // tbNome
             // 

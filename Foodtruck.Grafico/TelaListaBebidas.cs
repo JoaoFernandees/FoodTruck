@@ -37,6 +37,11 @@ namespace Foodtruck.Grafico
             CarregarBebidas();
         }
 
+        private void btAdicionar_Click_1(object sender, EventArgs e)
+        {
+            AbreTelaInclusaoAlteracao(null);
+        }
+
         private bool VerificarSelecao()
         {
             if (dgBebidas.SelectedRows.Count <= 0)
@@ -57,10 +62,7 @@ namespace Foodtruck.Grafico
             dgBebidas.DataSource = bebidas;
         }
 
-        private void btAdicionar_Click_1(object sender, EventArgs e)
-        {
-            AbreTelaInclusaoAlteracao(null);
-        }
+
 
         private void btAlterar_Click_1(object sender, EventArgs e)
         {
@@ -72,6 +74,28 @@ namespace Foodtruck.Grafico
         }
 
         private void btRemover_Click_1(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
+                if (resultado == DialogResult.OK)
+                {
+                    Bebida bebidaSelecionada = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverBebida(bebidaSelecionada);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Bebida removido com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um problema ao remover a bebida");
+                    }
+                    CarregarBebidas();
+                }
+            }
+        }
+
+        private void dgBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

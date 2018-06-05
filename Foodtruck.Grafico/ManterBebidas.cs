@@ -40,7 +40,7 @@ namespace Foodtruck.Grafico
                 bebida.Valor = result;
             }
 
-            /*else
+            else
             {
                 bebida.Valor = -1;
 
@@ -49,7 +49,7 @@ namespace Foodtruck.Grafico
             if (Double.TryParse(tbTamanho.Text, out double valor))
             {
                 bebida.Tamanho = valor;
-            }*/
+            }
 
             else
             {

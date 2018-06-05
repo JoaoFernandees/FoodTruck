@@ -67,6 +67,7 @@
             this.btRemover.TabIndex = 3;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = true;
+            //this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
             // dgBebidas
             // 

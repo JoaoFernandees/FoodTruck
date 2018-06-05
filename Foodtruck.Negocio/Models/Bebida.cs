@@ -9,12 +9,10 @@ namespace Foodtruck.Negocio.Models
 {
     public class Bebida : Produto
     {
-        public float Tamanho { get; set; }
+        public Double Tamanho { get; set; }
 
         [ForeignKey("Bebidas")]
-        //public virtual ICollection<Pedido> Pedidos { get; set; }
-        public override ICollection<Pedido> Pedidos { get; set; }
-
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override String Descrever()
         {
