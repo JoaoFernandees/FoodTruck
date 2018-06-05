@@ -14,6 +14,7 @@ namespace Foodtruck.Negocio.Models
         public String CPF { get; set; }
         public String Nome { get; set; }
         public String Email { get; set; }
+        public String status { get; set; }
 
         [NotMapped]
         public String Descricao {

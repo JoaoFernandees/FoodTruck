@@ -106,6 +106,7 @@ namespace Foodtruck.Grafico
             {
                 pedido.Cliente = cbClientes.SelectedItem as Cliente;
                 pedido.DataCompra = DateTime.Now;
+                pedido.Cliente.status = "1";
             }
 
             Validacao validacao;

@@ -36,6 +36,7 @@ namespace Foodtruck.Grafico
             cliente.CPF = tbCpf.Text;
             cliente.Nome = tbNome.Text;
             cliente.Email = tbEmail.Text;
+            cliente.status = "0";
 
             Validacao validacao;
             if (ClienteSelecionado == null)

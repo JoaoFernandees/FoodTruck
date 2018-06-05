@@ -17,7 +17,15 @@ namespace Foodtruck.Negocio
         {
             Validacao validacao = new Validacao();
             banco.Clientes.Remove(cliente);
-            banco.SaveChanges();
+            if (cliente.status == "0")
+            {
+                banco.SaveChanges();
+            }
+            else
+            {
+
+            }
+
             return validacao;
         }
 

@@ -71,13 +71,20 @@ namespace Foodtruck.Grafico
                 {
                     Cliente clienteSelecionado = (Cliente)dgClientes.SelectedRows[0].DataBoundItem;
                     var validacao = Program.Gerenciador.RemoverCliente(clienteSelecionado);
-                    if (validacao.Valido)
+                    if (clienteSelecionado.status == "0")
                     {
-                        MessageBox.Show("Cliente removido com sucesso");
+                        if (validacao.Valido)
+                        {
+                            MessageBox.Show("Cliente removido com sucesso");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                        MessageBox.Show("Você não pode excluir um cliente que tenha um pedido realizado/finalizado!");
                     }
                     CarregarClientes();
                 }
