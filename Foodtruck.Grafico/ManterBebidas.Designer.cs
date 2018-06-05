@@ -112,6 +112,7 @@
             this.btSalvar.TabIndex = 14;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btCancelar
             // 
@@ -121,6 +122,7 @@
             this.btCancelar.TabIndex = 15;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // ManterBebidas
             // 
