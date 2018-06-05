@@ -76,6 +76,7 @@
             this.btAdicionar.TabIndex = 6;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // btAlterar
             // 
@@ -85,6 +86,7 @@
             this.btAlterar.TabIndex = 7;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btRemover
             // 
@@ -94,6 +96,7 @@
             this.btRemover.TabIndex = 8;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click_1);
             // 
             // TelaListaLanches
             // 

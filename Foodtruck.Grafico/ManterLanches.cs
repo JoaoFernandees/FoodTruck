@@ -30,7 +30,7 @@ namespace Foodtruck.Grafico
         {
             if (LancheSelecionado != null)
             {
-                this.boxid.Text = LancheSelecionado.Id.ToString();
+                this.tbId.Text = LancheSelecionado.Id.ToString();
                 this.tbNome.Text = LancheSelecionado.Nome;
                 this.tbValor.Text = LancheSelecionado.Valor.ToString();
             }
@@ -39,7 +39,7 @@ namespace Foodtruck.Grafico
         private void btSalvar_Click(object sender, EventArgs e)
         {
             Lanche lanche = new Lanche();
-            if (Int64.TryParse(boxid.Text, out long value))
+            if (Int64.TryParse(tbId.Text, out long value))
             {
                 lanche.Id = value;
             }
@@ -88,5 +88,7 @@ namespace Foodtruck.Grafico
 
             this.Close();
         }
+
+
     }
 }

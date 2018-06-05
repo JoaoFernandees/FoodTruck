@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbValor = new System.Windows.Forms.TextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.boxid = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -70,21 +70,21 @@
             this.tbValor.Location = new System.Drawing.Point(61, 75);
             this.tbValor.Name = "tbValor";
             this.tbValor.Size = new System.Drawing.Size(211, 20);
-            this.tbValor.TabIndex = 8;
+            this.tbValor.TabIndex = 2;
             // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(61, 39);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(211, 20);
-            this.tbNome.TabIndex = 9;
+            this.tbNome.TabIndex = 1;
             // 
-            // boxid
+            // tbId
             // 
-            this.boxid.Location = new System.Drawing.Point(61, 6);
-            this.boxid.Name = "boxid";
-            this.boxid.Size = new System.Drawing.Size(211, 20);
-            this.boxid.TabIndex = 10;
+            this.tbId.Location = new System.Drawing.Point(61, 6);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(211, 20);
+            this.tbId.TabIndex = 0;
             // 
             // btSalvar
             // 
@@ -113,7 +113,7 @@
             this.ClientSize = new System.Drawing.Size(285, 132);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
-            this.Controls.Add(this.boxid);
+            this.Controls.Add(this.tbId);
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.tbValor);
             this.Controls.Add(this.label3);
@@ -133,7 +133,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbValor;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.TextBox boxid;
+        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btCancelar;
     }

@@ -10,7 +10,7 @@ namespace Foodtruck.Negocio
 {
     public class Gerenciador
     {
-       
+
         private Banco banco = new Banco();
 
         public Validacao RemoverCliente(Cliente cliente)
@@ -76,12 +76,12 @@ namespace Foodtruck.Negocio
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
-            if(clienteAdicionado.Id < 0)
+            if (clienteAdicionado.Id < 0)
             {
                 validacao.Mensagens.Add("Id", "O indenfiticador deve constituir apenas números positivos");
             }
             //verifica se já tem alguma mensagem de erro e se tiver pula essa verificação
-            if(this.banco.Clientes.Where(c => c.Id == clienteAdicionado.Id).Any() && validacao.Mensagens.Count == 0)
+            if (this.banco.Clientes.Where(c => c.Id == clienteAdicionado.Id).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Id", "Já existe um cliente com esse código");
             }
@@ -91,7 +91,7 @@ namespace Foodtruck.Negocio
                 validacao.Mensagens.Add("CPF", "O campo CPF não pode ser nulo ou vazio");
             }
 
-            if(this.banco.Clientes.Where(c => c.CPF == clienteAdicionado.CPF).Any() && validacao.Mensagens.Count == 0)
+            if (this.banco.Clientes.Where(c => c.CPF == clienteAdicionado.CPF).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("CPF", "Já exite um cliente com esse CPF");
             }
@@ -124,17 +124,17 @@ namespace Foodtruck.Negocio
         {
             Validacao validacao = new Validacao();
 
-            if(this.banco.Bebidas.Where(x => x.Id == bebidaCadastrada.Id).Any())
+            if (this.banco.Bebidas.Where(x => x.Id == bebidaCadastrada.Id).Any())
             {
                 validacao.Mensagens.Add("id", "Já existem uma bebida com esse código");
             }
 
-            if(string.IsNullOrEmpty(bebidaCadastrada.Nome))
+            if (string.IsNullOrEmpty(bebidaCadastrada.Nome))
             {
                 validacao.Mensagens.Add("nome", "O nome não pode ser nulo ou vazio");
             }
 
-            if(string.IsNullOrEmpty(Convert.ToString(bebidaCadastrada.Tamanho)))
+            if (string.IsNullOrEmpty(Convert.ToString(bebidaCadastrada.Tamanho)))
             {
                 validacao.Mensagens.Add("tamanho", "O campo tamanho não pode ser nulo ou vazio");
             }
@@ -182,7 +182,7 @@ namespace Foodtruck.Negocio
         public Validacao CadastraPedido(Pedido pedidoCadastrado)
         {
             Validacao validacao = new Validacao();
-            if(this.banco.Pedidos.Where(x => x.Id == pedidoCadastrado.Id).Any())
+            if (this.banco.Pedidos.Where(x => x.Id == pedidoCadastrado.Id).Any())
             {
                 validacao.Mensagens.Add("id", "Já existem um pedido com esse código");
             }
@@ -218,7 +218,17 @@ namespace Foodtruck.Negocio
 
             return validacao;
         }
-        
+
+        /*Lanche*/
+
+        public Validacao RemoverLanche(Lanche lanche)
+        {
+            Validacao validacao = new Validacao();
+            banco.Lanches.Remove(lanche);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Cliente BuscaClientePorId(long id)
         {
             return this.banco.Clientes.Where(c => c.Id == id).FirstOrDefault();
@@ -251,7 +261,7 @@ namespace Foodtruck.Negocio
 
         public Lanche BuscaLanchePorId(long id)
         {
-            return this.banco.Lanches.Where(c => c.Id == id).FirstOrDefault();
+            return this.banco.Lanches.Where(l => l.Id == id).FirstOrDefault();
         }
 
         public Bebida BuscaBebidaPorId(long id)
