@@ -34,6 +34,8 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lanchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.bebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lanchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -98,7 +98,21 @@
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
             this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
-            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
+            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click_1);
+            // 
+            // bebidasToolStripMenuItem
+            // 
+            this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
+            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bebidasToolStripMenuItem.Text = "Bebidas";
+            this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.bebidasToolStripMenuItem_Click);
+            // 
+            // lanchesToolStripMenuItem
+            // 
+            this.lanchesToolStripMenuItem.Name = "lanchesToolStripMenuItem";
+            this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lanchesToolStripMenuItem.Text = "Lanches";
+            this.lanchesToolStripMenuItem.Click += new System.EventHandler(this.lanchesToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -193,20 +207,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // bebidasToolStripMenuItem
-            // 
-            this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
-            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bebidasToolStripMenuItem.Text = "Bebidas";
-            this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.bebidasToolStripMenuItem_Click);
-            // 
-            // lanchesToolStripMenuItem
-            // 
-            this.lanchesToolStripMenuItem.Name = "lanchesToolStripMenuItem";
-            this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lanchesToolStripMenuItem.Text = "Lanches";
-            this.lanchesToolStripMenuItem.Click += new System.EventHandler(this.lanchesToolStripMenuItem_Click);
             // 
             // TelaPrincipal
             // 

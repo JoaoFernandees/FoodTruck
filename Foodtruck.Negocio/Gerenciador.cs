@@ -32,6 +32,18 @@ namespace Foodtruck.Negocio
             return validacao;
         }
 
+
+        public Validacao AlterarPedido(Pedido PedidoAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Pedido pedidoBanco = BuscaPedidoPorId(PedidoAlterado.Id);
+            pedidoBanco.Cliente = PedidoAlterado.Cliente;
+            pedidoBanco.Lanches = PedidoAlterado.Lanches;
+            pedidoBanco.Bebidas = PedidoAlterado.Bebidas;
+            this.banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AdicionarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
@@ -201,6 +213,11 @@ namespace Foodtruck.Negocio
         public List<Pedido> TodosOsPedidos()
         {
             return this.banco.Pedidos.ToList();
+        }
+
+        public Pedido BuscaPedidoPorId(long id)
+        {
+            return this.banco.Pedidos.Where(c => c.Id == id).FirstOrDefault();
         }
     }
 }

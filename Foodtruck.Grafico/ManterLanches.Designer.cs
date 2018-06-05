@@ -1,6 +1,6 @@
 ﻿namespace Foodtruck.Grafico
 {
-    partial class ManterBebidas
+    partial class ManterLanches
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbId = new System.Windows.Forms.TextBox();
-            this.tbNome = new System.Windows.Forms.TextBox();
             this.tbValor = new System.Windows.Forms.TextBox();
-            this.tbTamanho = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,102 +41,84 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Código: ";
+            this.label1.Text = "Código";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Location = new System.Drawing.Point(12, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nome: ";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 73);
+            this.label3.Location = new System.Drawing.Point(12, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Valor: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tamanho:";
-            // 
-            // tbId
-            // 
-            this.tbId.Location = new System.Drawing.Point(75, 8);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(304, 20);
-            this.tbId.TabIndex = 10;
-            // 
-            // tbNome
-            // 
-            this.tbNome.Location = new System.Drawing.Point(75, 37);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(304, 20);
-            this.tbNome.TabIndex = 11;
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Valor";
             // 
             // tbValor
             // 
-            this.tbValor.Location = new System.Drawing.Point(75, 70);
+            this.tbValor.Location = new System.Drawing.Point(61, 75);
             this.tbValor.Name = "tbValor";
-            this.tbValor.Size = new System.Drawing.Size(304, 20);
-            this.tbValor.TabIndex = 12;
+            this.tbValor.Size = new System.Drawing.Size(211, 20);
+            this.tbValor.TabIndex = 8;
             // 
-            // tbTamanho
+            // tbNome
             // 
-            this.tbTamanho.Location = new System.Drawing.Point(75, 99);
-            this.tbTamanho.Name = "tbTamanho";
-            this.tbTamanho.Size = new System.Drawing.Size(304, 20);
-            this.tbTamanho.TabIndex = 13;
+            this.tbNome.Location = new System.Drawing.Point(61, 39);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(211, 20);
+            this.tbNome.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(61, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 20);
+            this.textBox1.TabIndex = 10;
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(223, 125);
+            this.btSalvar.Location = new System.Drawing.Point(116, 101);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 14;
+            this.btSalvar.TabIndex = 11;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(304, 125);
+            this.btCancelar.Location = new System.Drawing.Point(197, 101);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 15;
+            this.btCancelar.TabIndex = 12;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
-            // ManterBebidas
+            // ManterLanches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 163);
+            this.ClientSize = new System.Drawing.Size(285, 132);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
-            this.Controls.Add(this.tbTamanho);
-            this.Controls.Add(this.tbValor);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tbNome);
-            this.Controls.Add(this.tbId);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbValor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ManterBebidas";
-            this.Text = "ManterBebidas";
+            this.Name = "ManterLanches";
+            this.Text = "ManterLanches";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,11 +129,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbId;
-        private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.TextBox tbValor;
-        private System.Windows.Forms.TextBox tbTamanho;
+        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btCancelar;
     }

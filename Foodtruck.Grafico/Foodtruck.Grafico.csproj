@@ -52,17 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdicionaPedido.cs">
+    <Compile Include="ManterBebidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdicionaPedido.Designer.cs">
-      <DependentUpon>AdicionaPedido.cs</DependentUpon>
+    <Compile Include="ManterBebidas.Designer.cs">
+      <DependentUpon>ManterBebidas.cs</DependentUpon>
     </Compile>
     <Compile Include="ManterCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManterCliente.Designer.cs">
       <DependentUpon>ManterCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManterLanches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManterLanches.Designer.cs">
+      <DependentUpon>ManterLanches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManterPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManterPedido.Designer.cs">
+      <DependentUpon>ManterPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,11 +108,17 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdicionaPedido.resx">
-      <DependentUpon>AdicionaPedido.cs</DependentUpon>
+    <EmbeddedResource Include="ManterBebidas.resx">
+      <DependentUpon>ManterBebidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManterCliente.resx">
       <DependentUpon>ManterCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManterLanches.resx">
+      <DependentUpon>ManterLanches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManterPedido.resx">
+      <DependentUpon>ManterPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
