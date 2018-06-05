@@ -97,11 +97,6 @@ namespace Foodtruck.Grafico
             }
         }
 
-        private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btAdicionaBebida_Click(object sender, EventArgs e)
         {
             if (PedidoSelecionado == null)
@@ -116,18 +111,6 @@ namespace Foodtruck.Grafico
                 PedidoSelecionado.Bebidas.Add(bebidaSelecionada);
                 CarregaDatagrids();
             }
-        }
-
-
-
-        private void cbBebidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btAdicionaLanche_Click(object sender, EventArgs e)
